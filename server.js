@@ -1,6 +1,7 @@
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
+const path = require('path')
 const express = require('express')
 const fs = require('fs')
 const { Pool } = require('pg')
@@ -17,10 +18,10 @@ server.use(theFileUploader())
 server.listen(3000)
 
 server.get('/', (req, res) => {
-  res.send('Oh Yeauh we online')
+  res.sendFile(path.join(__dirname, '/index.html'))
 })
-server.post('/create', (req, res) => {
+server.post('/', (req, res) => {
   console.log("AND DA FIELS ARR")
-  console.log(req.files)
-  const {name, data} = req.files.pic
+  console.log(req.file)
+  res.send("It worked")
 })
