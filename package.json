@@ -1,0 +1,27 @@
+{
+  "name": "memes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run!": "./node_modules/.bin/nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs-vcaccess/memes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs-vcaccess/memes/issues"
+  },
+  "homepage": "https://github.com/cs-vcaccess/memes#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-fileupload": "^1.3.1",
+    "jquery": "^3.6.0",
+    "jsdom": "^19.0.0",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3"
+  }
+}
