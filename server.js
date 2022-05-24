@@ -22,6 +22,6 @@ server.get('/', (req, res) => {
 })
 server.post('/', (req, res) => {
   console.log("AND DA FIELS ARR")
-  console.log(req.file)
+  console.log(req.files)
   res.send("It worked")
 })
