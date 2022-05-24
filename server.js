@@ -20,8 +20,12 @@ server.listen(3000)
 server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
-server.post('/', (req, res) => {
-  if (req.files) {
-
-  } else req.status(400).send("No file uploaded")
+server.post('/', async (req, res) => {
+  try {
+    if (req.files) {
+      const type = req.files.file.mimetype.match(/^[a-z]+/g)
+      await db.query(`INSERT INTO meme (data, type) VALUES (${req.files.file.data}, '${type}')`)
+      req.status(200).send("Worked")
+    } else req.status(400).send("No file uploaded")
+  } catch (err) { res.status(500).json(err) }
 })

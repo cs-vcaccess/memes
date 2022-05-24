@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "run!": "./node_modules/.bin/nodemon server.js"
+    "away": "./node_modules/.bin/nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "express-fileupload": "^1.3.1",
     "jquery": "^3.6.0",
     "jsdom": "^19.0.0",
+    "knex": "^2.0.0",
     "nodemon": "^2.0.16",
     "pg": "^8.7.3"
   }
