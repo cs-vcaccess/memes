@@ -21,7 +21,7 @@ server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 server.post('/', (req, res) => {
-  console.log("AND DA FIELS ARR")
-  console.log(req.files)
-  res.send("It worked")
+  if (req.files) {
+
+  } else req.status(400).send("No file uploaded")
 })
