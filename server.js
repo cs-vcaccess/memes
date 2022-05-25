@@ -9,19 +9,20 @@ const db = new Pool({
   user: 'ratpuppymagic',
   database: 'todo'
 })
-let todoItems
 
 server.use(express.urlencoded({extended: false}))
 server.use(express.json())
 server.use(express.static("whateverIwant"))
 server.listen(3000)
 
-server.get('/', async (req, res) => {
+server.get('/read', async (req, res) => {
   const {rows} = await db.query(`select * from item`)
-  todoItems = rows
-
+  res.json(rows)
 })
-server.post('/', async (req, res) => {
+
+server.post('/create', async (req, res) => {
   console.log(req.body)
+  // await db.query(`select * `)
+  res.send("You've hit the post")
 })
 
