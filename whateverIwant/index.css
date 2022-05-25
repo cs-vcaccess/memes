@@ -1,0 +1,24 @@
+html, body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+#allTheTodoItems {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80vw;
+  font-family: sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center
+}
+
+.todoItem {
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  margin: 10px;
+}

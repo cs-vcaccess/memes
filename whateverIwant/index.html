@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="x-icon" href="favicon.ico"/> <!-- doesn't work 🥹 -->
+    <link rel="stylesheet" href="index.css"/>
+  </head>
+  <body>
+    <!-- <form action="/" method="POST"> -->
+    <!-- putting this shit inside the form tag always reloads the page -->
+      <input type="text" name="title"/>
+      <input type="text" name="body"/>
+      <button type="submit" value="idk" id="submit-button">Submit</button>
+    <!-- </form> -->
+    <div id="allTheTodoItems">
+      <div class="todoItem">
+        <h3>Title of todo item</h3>
+        <p>
+          This is the body of the todo item.
+        </p>
+      </div>
+      <div class="todoItem">
+        <h3>Title of todo item</h3>
+        <p>
+          This is the body of the todo item.
+        </p>
+      </div>
+      <div class="todoItem">
+        <h3>Title of todo item</h3>
+        <p>
+          This is the body of the todo item.
+        </p>
+      </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
