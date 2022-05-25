@@ -21,8 +21,11 @@ server.get('/read', async (req, res) => {
 })
 
 server.post('/create', async (req, res) => {
-  console.log(req.body)
-  // await db.query(`select * `)
+  const { title, body } = req.body
+  console.log(`Data is literally (${title}) (${body})`)
+  try {
+    await db.query(`INSERT INTO item (title, body) VALUES ('${title}', '${body}')`)
+  } catch (err) { console.error(err.message) }
   res.send("You've hit the post")
 })
 

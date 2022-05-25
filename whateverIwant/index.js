@@ -1,4 +1,4 @@
-// my page just loaded so I'm gonna show what's currently there in the db
+// my page just loaded so I'm gonna show what's currently in the db
 updateDisplay()
 
 $('#submit-button').on('click', async () => {
@@ -12,17 +12,21 @@ $('#submit-button').on('click', async () => {
     },
     () => updateDisplay()
   )
+  $('#title-input').val('')
+  $('#body-input').val('')
 })
 async function updateDisplay() {
   $('#allTheTodoItems').html('')
   const request = await fetch('http://localhost:3000/read')
   const response = await request.json()
-  const {id, title, body} = response[0]
-  $('#allTheTodoItems').append(`
-    <div class="todoItem">
-      <h3>${title}</h3>
-      <p>${body}</p>
-      <id hidden>${id}</id>
-    </div>
-  `)
+  response.forEach(entry => {
+    const {id, title, body} = entry
+    $('#allTheTodoItems').append(`
+      <div class="todoItem">
+        <h3>${title}</h3>
+        <p>${body}</p>
+        <id hidden>${id}</id>
+      </div>
+    `)
+  })
 }
