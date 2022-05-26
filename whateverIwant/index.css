@@ -23,3 +23,6 @@ html, body {
   border-radius: 10px;
   margin: 10px;
 }
+.todoItem > div {
+  display: flex;
+}
